@@ -95,6 +95,6 @@ schema-oas30-downcompile: False
 license: Apache-2.0
 
 deploy:
-  mode: branch  
+  mode: branch
   branch: gh-pages
 

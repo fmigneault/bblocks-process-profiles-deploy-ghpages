@@ -1,6 +1,0 @@
-{
-  "binary_mask_item": {
-    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-otsu-0001/results/otsu.tif",
-    "type": "image/tiff; application=geotiff"
-  }
-}
