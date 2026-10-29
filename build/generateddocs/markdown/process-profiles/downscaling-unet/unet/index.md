@@ -391,7 +391,7 @@ OGC API - Processes processDescription returned by Weaver for the deployed CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld",
   "id": "ogc-ospd2026-downscaling-unet",
   "version": "0.1.3.dev10",
   "title": "RDPS-to-HRDPS U-Net downscaling inference",
@@ -687,6 +687,14 @@ into the inference image.
     :metadata [ :role "https://schema.org/author" ;
             :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
+                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
+                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
+                    :name "Blaise Gauvin St-Denis" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-01-30T10:42:53-05:00" ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
@@ -695,14 +703,6 @@ into the inference image.
                     :affiliation "Technologies Luqia" ;
                     :email "nazim.azeli@luqia.ca" ;
                     :name "Nazim Azeli" ] ],
-        [ :role "https://schema.org/author" ;
-            :value [ ns1:schema "https://schema.org/Person" ;
-                    :affiliation "Ouranos" ;
-                    :email "gauvin-st-denis.blaise@ouranos.ca" ;
-                    :identifier "https://orcid.org/0009-0004-9049-2092" ;
-                    :name "Blaise Gauvin St-Denis" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-01-30T10:42:53-05:00" ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
@@ -774,7 +774,7 @@ Part 2 deploy body: the execution unit is a link to the CWL pinned at the resote
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld",
   "processDescription": {
     "process": {
       "id": "ogc-ospd2026-downscaling-unet",
@@ -885,7 +885,7 @@ x-jsonld-prefixes:
   geoproc: https://w3id.org/ogc/rim/geoprocessing/
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.unet
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'
 
@@ -893,8 +893,8 @@ x-bblocks-metadata:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/unet/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/unet/schema.yaml)
+* YAML version: [schema.yaml](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/unet/schema.json)
+* JSON version: [schema.json](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/unet/schema.yaml)
 
 
 # JSON-LD Context
@@ -984,7 +984,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld)
+[context.jsonld](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/unet/context.jsonld)
 
 
 # For developers

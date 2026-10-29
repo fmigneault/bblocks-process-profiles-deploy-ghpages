@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/contains/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/contains/context.jsonld",
   "id": "Contains",
   "title": "Contains",
   "description": "This service shall return a true value if and only if the geometry g2 lies in the closure (boundary union interior) of geometry g1 - the inverse of Within(g1: Geometry, g2: Geometry).",

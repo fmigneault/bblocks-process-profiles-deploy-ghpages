@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/convex-hull/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/convex-hull/context.jsonld",
   "id": "ConvexHull",
   "title": "Compute convex hull.",
   "description": "This service shall return a feature collection that represents the convex hull of geometry InputPolygon. The convex hull is the smallest convex polygon that contains all points of the geometry. The convex Hull for a geometry of encoding data type Point is the point itself",

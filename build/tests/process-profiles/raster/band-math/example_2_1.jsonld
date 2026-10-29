@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/raster/band-math/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/raster/band-math/context.jsonld",
   "id": "OTB.BandMath",
   "title": "Outputs a monoband image which is the result of a mathematical operation on several multi-band images.",
   "description": "This application performs a mathematical operation on several multi-band images and outputs the result into a monoband image. The given expression is computed at each pixel position. Evaluation of the mathematical formula is done by the muParser library.The formula can be written using:* numerical values ( 2.3, -5, 3.1e4, ...)* variables containing pixel values (e.g. ``im2b3`` is the pixel value in 2nd image, 3rd band)* binary operators:  * ``+`` addition, ``-`` subtraction, ``*`` multiplication, ``/`` division  * ``^`` raise x to the power of y  * ``",

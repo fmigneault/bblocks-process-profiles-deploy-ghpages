@@ -212,7 +212,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
   "id": "SAGA.ta_morphometry.16",
   "title": "Terrain Ruggedness Index (TRI)",
   "description": "References:&lt;br/&gt;Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27. &lt;a href=\"http://www.fw.msu.edu/~rileysh2/Terrain%20Ruggedness%20Index.pdf\"&gt;online&lt;/a&gt;.&lt;br/&gt;",
@@ -377,10 +377,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns3: <http://www.iana.org/assignments/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -392,31 +392,31 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Terrain Ruggedness Index (TRI)" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns2:DEM [ dcterms:description "Elevation" ;
+    proc:inputs [ ns3:DEM [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ] ] ] ;
-            ns2:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns3:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
                     dcterms:title "Gaussian and Exponential Weighting Bandwidth" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "75"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ] ] ;
-            ns2:DW_IDW_OFFSET [ dcterms:description "Calculates weights for distance plus one, avoiding division by zero for zero distances" ;
+                            ns2:format "float" ] ] ;
+            ns3:DW_IDW_OFFSET [ dcterms:description "Calculates weights for distance plus one, avoiding division by zero for zero distances" ;
                     dcterms:title "Inverse Distance Offset" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "true"^^rdf:JSON ;
@@ -424,14 +424,14 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "true" ;
                             proc:nullable true ;
                             proc:type "boolean" ] ] ;
-            ns2:DW_IDW_POWER [ dcterms:description "Inverse Distance Weighting Power" ;
+            ns3:DW_IDW_POWER [ dcterms:description "Inverse Distance Weighting Power" ;
                     dcterms:title "Inverse Distance Weighting Power" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns1:format "float" ] ] ;
-            ns2:DW_WEIGHTING [ dcterms:description "Weighting Function" ;
+                            ns2:format "float" ] ] ;
+            ns3:DW_WEIGHTING [ dcterms:description "Weighting Function" ;
                     dcterms:title "Weighting Function" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"no distance weighting\""^^rdf:JSON ;
@@ -441,7 +441,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "no distance weighting" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns2:MODE [ dcterms:description "Search Mode" ;
+            ns3:MODE [ dcterms:description "Search Mode" ;
                     dcterms:title "Search Mode" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"Circle\""^^rdf:JSON ;
@@ -449,7 +449,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "Square" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns2:RADIUS [ dcterms:description "radius in cells" ;
+            ns3:RADIUS [ dcterms:description "radius in cells" ;
                     dcterms:title "Search Radius" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
@@ -461,20 +461,20 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:TRI [ dcterms:description "Terrain Ruggedness Index (TRI)" ;
+    proc:outputs [ ns1:TRI [ dcterms:description "Terrain Ruggedness Index (TRI)" ;
                     dcterms:title "Terrain Ruggedness Index (TRI)" ;
-                    proc:schema [ ns1:oneOf [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                    proc:schema [ ns2:oneOf [ proc:type "string" ;
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ] ] ] ] .
+                                    ns2:contentEncoding "base64" ;
+                                    ns2:contentMediaType "application/x-ogc-aaigrid" ] ] ] ] .
 
 
 ```
@@ -707,7 +707,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
   "id": "SAGA.ta_morphometry.16",
   "title": "Terrain Ruggedness Index (TRI)",
   "description": "References:&lt;br/&gt;Riley, S.J., De Gloria, S.D., Elliot, R. (1999): A Terrain Ruggedness that Quantifies Topographic Heterogeneity. Intermountain Journal of Science, Vol.5, No.1-4, pp.23-27. &lt;a href=\"http://www.fw.msu.edu/~rileysh2/Terrain%20Ruggedness%20Index.pdf\"&gt;online&lt;/a&gt;.&lt;br/&gt;",
@@ -929,8 +929,8 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### ttl
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns2: <https://w3id.org/ogc/api/schema/> .
+@prefix ns1: <https://w3id.org/ogc/api/schema/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
 @prefix ns3: <http://www.iana.org/assignments/> .
 @prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
@@ -953,7 +953,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
             ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_morphometry.16/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns1:DEM [ dcterms:description "Elevation" ;
+    proc:inputs [ ns2:DEM [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
                     proc:keywords "GeoTIFF",
                         "elevation" ;
@@ -963,26 +963,26 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                         [ dcterms:title "Generic Profile: Terrain derivative -- input `elevation`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/inputs/elevation> ;
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ] ] ] ;
-            ns1:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
+            ns2:DW_BANDWIDTH [ dcterms:description "Gaussian and Exponential Weighting Bandwidth" ;
                     dcterms:title "Gaussian and Exponential Weighting Bandwidth" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "75"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns2:format "float" ] ] ;
-            ns1:DW_IDW_OFFSET [ dcterms:description "Calculates weights for distance plus one, avoiding division by zero for zero distances" ;
+                            ns1:format "float" ] ] ;
+            ns2:DW_IDW_OFFSET [ dcterms:description "Calculates weights for distance plus one, avoiding division by zero for zero distances" ;
                     dcterms:title "Inverse Distance Offset" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "true"^^rdf:JSON ;
@@ -990,14 +990,14 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "true" ;
                             proc:nullable true ;
                             proc:type "boolean" ] ] ;
-            ns1:DW_IDW_POWER [ dcterms:description "Inverse Distance Weighting Power" ;
+            ns2:DW_IDW_POWER [ dcterms:description "Inverse Distance Weighting Power" ;
                     dcterms:title "Inverse Distance Weighting Power" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
-                            ns2:format "float" ] ] ;
-            ns1:DW_WEIGHTING [ dcterms:description "Weighting Function" ;
+                            ns1:format "float" ] ] ;
+            ns2:DW_WEIGHTING [ dcterms:description "Weighting Function" ;
                     dcterms:title "Weighting Function" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"no distance weighting\""^^rdf:JSON ;
@@ -1007,7 +1007,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "no distance weighting" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns1:MODE [ dcterms:description "Search Mode" ;
+            ns2:MODE [ dcterms:description "Search Mode" ;
                     dcterms:title "Search Mode" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"Circle\""^^rdf:JSON ;
@@ -1015,7 +1015,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "Square" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns1:RADIUS [ dcterms:description "radius in cells" ;
+            ns2:RADIUS [ dcterms:description "radius in cells" ;
                     dcterms:title "Search Radius" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
@@ -1040,24 +1040,24 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                     dcterms:title "Terrain Ruggedness Index (TRI)" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Terrain ruggedness index -- output `result`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ],
-                        [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Terrain derivative -- output `result`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/terrain-derivative/outputs/result> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ] ;
-                    proc:schema [ ns2:oneOf [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-aaigrid" ],
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-output> ],
+                        [ dcterms:title "Implementation Profile: Terrain ruggedness index -- output `result`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/terrain-ruggedness-index/outputs/result> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
+                    proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "application/x-ogc-envi" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/png" ],
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
-                                    ns2:contentEncoding "base64" ;
-                                    ns2:contentMediaType "image/tiff" ] ] ] ] .
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ] .
 
 
 ```
@@ -1096,7 +1096,7 @@ Candidate entry `https://geolabs.github.io/bblocks-process-profiles/def/process-
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/terrain/terrain-ruggedness-index",
   "type": "ProcessType",
   "prefLabel": "Terrain Ruggedness Index (TRI)",
@@ -1187,7 +1187,7 @@ allOf:
       x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/output/
 $defs:
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/process-type/schema.yaml
   inheritedProcessDescription:
     allOf:
     - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml
@@ -1548,7 +1548,7 @@ x-jsonld-prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.terrain.terrain-ruggedness-index
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'
 
@@ -1556,8 +1556,8 @@ x-bblocks-metadata:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/schema.yaml)
+* YAML version: [schema.yaml](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/schema.json)
+* JSON version: [schema.json](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/schema.yaml)
 
 
 # JSON-LD Context
@@ -1847,7 +1847,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld)
+[context.jsonld](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/terrain-ruggedness-index/context.jsonld)
 
 
 # For developers

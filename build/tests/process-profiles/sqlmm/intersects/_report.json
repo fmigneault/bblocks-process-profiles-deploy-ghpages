@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.sqlmm.intersects - Process profile: Intersects",
   "bblockName": "Process profile: Intersects",
   "bblockId": "ospd.process-profiles.sqlmm.intersects",
-  "generated": "2026-10-29T01:37:10.119526+00:00",
+  "generated": "2026-10-29T15:07:01.181331+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/sqlmm/intersects/example_2_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/sqlmm/intersects/example_2_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/sqlmm/intersects/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -65,7 +65,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/sqlmm/intersects/example_3_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/sqlmm/intersects/example_3_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/sqlmm/intersects/example_3_1.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
         "language": "application/json"
@@ -125,7 +125,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/sqlmm/intersects/example_4_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/sqlmm/intersects/example_4_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/sqlmm/intersects/example_4_1.json",
         "exampleIndex": 4,
         "snippetIndex": 1,
         "language": "application/json"

@@ -238,7 +238,7 @@ OGC API - Processes processDescription returned by Weaver for the deployed CWL.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld",
   "id": "ogc-ospd2026-downscaling-download-files",
   "version": "0.1.3.dev10",
   "title": "Download listed files",
@@ -365,8 +365,8 @@ OGC API - Processes processDescription returned by Weaver for the deployed CWL.
 ```ttl
 @prefix : <https://crim-ca.github.io/bblocks-process-profiles/def/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns1: <https://crim-ca.github.io/bblocks-process-profiles/def/$> .
+@prefix ns2: <https://w3id.org/ogc/api/schema/> .
 @prefix ns3: <pp:> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -383,33 +383,33 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
                     proc:maxOccurs 1 ;
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentMediaType "text/plain" ] ] ] ;
+                            ns2:contentMediaType "text/plain" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+    :metadata [ :role "https://schema.org/contributor" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "nazim.azeli@luqia.ca" ;
+                    :name "Nazim Azeli" ] ],
+        [ :role "https://schema.org/dateCreated" ;
+            :value "2026-09-04T11:45:32-04:00" ],
+        [ :role "https://schema.org/author" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "gauvin-st-denis.blaise@ouranos.ca" ;
                     :identifier "https://orcid.org/0009-0004-9049-2092" ;
                     :name "Blaise Gauvin St-Denis" ] ],
         [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
                     :email "francis.charette-migneault@luqia.ca" ;
                     :identifier "https://orcid.org/0000-0003-4862-3349" ;
                     :name "Francis Charette-Migneault" ] ],
         [ :role "https://schema.org/author" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
+            :value [ ns1:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
-        [ :role "https://schema.org/dateCreated" ;
-            :value "2026-09-04T11:45:32-04:00" ],
-        [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "nazim.azeli@luqia.ca" ;
-                    :name "Nazim Azeli" ] ],
         <https://github.com/Ouranosinc/resoterre>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CHANGELOG.rst>,
         <https://github.com/Ouranosinc/resoterre/blob/0.1.3-dev.10/CITATION.cff>,
@@ -422,9 +422,9 @@ Entries can be HTTP(S) URLs or local paths reachable from the container.
                     proc:formats [ proc:default "true"^^rdf:JSON ;
                             proc:mediaType "application/directory" ] ;
                     proc:schema [ proc:type "string" ;
-                            ns1:contentEncoding "base64" ;
-                            ns1:contentMediaType "application/directory" ;
-                            ns1:format "binary" ] ] ] ;
+                            ns2:contentEncoding "base64" ;
+                            ns2:contentMediaType "application/directory" ;
+                            ns2:format "binary" ] ] ] ;
     proc:keywords "RDPS",
         "application",
         "download",
@@ -470,7 +470,7 @@ Part 2 deploy body: the execution unit is a link to the CWL pinned at the resote
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld",
   "processDescription": {
     "process": {
       "id": "ogc-ospd2026-downscaling-download-files",
@@ -576,7 +576,7 @@ x-jsonld-prefixes:
   geoproc: https://w3id.org/ogc/rim/geoprocessing/
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.download-files
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'
 
@@ -584,8 +584,8 @@ x-bblocks-metadata:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/download-files/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/download-files/schema.yaml)
+* YAML version: [schema.yaml](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/download-files/schema.json)
+* JSON version: [schema.json](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/download-files/schema.yaml)
 
 
 # JSON-LD Context
@@ -675,7 +675,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld)
+[context.jsonld](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/download-files/context.jsonld)
 
 
 # For developers

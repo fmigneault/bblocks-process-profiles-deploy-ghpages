@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/kindgrove-steps/reproject-band/context.jsonld",
   "reprojected_file": {
     "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-reproject-band-0001/results/red_4326.tif",
     "type": "image/tiff; application=geotiff"

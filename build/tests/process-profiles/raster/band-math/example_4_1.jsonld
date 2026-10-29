@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/raster/band-math/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/raster/band-math/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/raster/band-math",
   "type": "ProcessType",
   "prefLabel": "Outputs a monoband image which is the result of a mathematical operation on several multi-band images.",

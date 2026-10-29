@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/pointcloud/point-cloud-to-grid/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/pointcloud/point-cloud-to-grid/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/pointcloud/point-cloud-to-grid",
   "type": "ProcessType",
   "prefLabel": "Point Cloud to Grid",

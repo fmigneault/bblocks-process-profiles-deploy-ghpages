@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/kindgrove-steps/calculate-indices/context.jsonld",
   "ndvi_file": {
     "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-calculate-indices-0001/results/ndvi.tif",
     "type": "image/tiff; application=geotiff"

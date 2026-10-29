@@ -283,7 +283,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
   "id": "SAGA.ta_lighting.0",
   "title": "Analytical Hillshading",
   "description": "This tool performs an analytical hillshade computation for an elevation grid. The 'Standard' method simply calculates the angle at which light coming from the position of the light source would hit the surface. This method can produce angles greater than 90 degree. With the second method all values are kept within the range of 0-90 degree. It can be enhanced with shadowing effects, where shadowed cells will be marked with a value of exactly 90 degree. 'Shadows Only' creates a mask for the shadowed areas and sets all other cells to no-data. 'Combined Shading' takes the values of the standard method and multiplies these with the normalized slope. 'Ambient Occlusion' is based on the concepts of Tarini et al. (2006), but only the northern half-space is considered here. ",
@@ -514,9 +514,9 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <http://www.iana.org/assignments/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <http://www.iana.org/assignments/> .
+@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -528,10 +528,10 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     dcterms:title "Analytical Hillshading" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns3:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns3:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
+    proc:inputs [ ns2:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
                     dcterms:title "Azimuth" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "315"^^rdf:JSON ;
@@ -540,13 +540,13 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                             ns1:format "float" ;
                             ns1:maximum 360 ;
                             ns1:minimum 0 ] ] ;
-            ns3:DATE_MIN [ dcterms:description "Day" ;
+            ns2:DATE_MIN [ dcterms:description "Day" ;
                     dcterms:title "Day (min value)" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:nullable true ;
                             proc:type "string" ;
                             ns1:format "date" ] ] ;
-            ns3:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
+            ns2:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
                     dcterms:title "Height" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "45"^^rdf:JSON ;
@@ -555,28 +555,28 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                             ns1:format "float" ;
                             ns1:maximum 90 ;
                             ns1:minimum 0 ] ] ;
-            ns3:ELEVATION [ dcterms:description "Elevation" ;
+            ns2:ELEVATION [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/tiff" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ;
-            ns3:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
+                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
+            ns2:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
                     dcterms:title "Exaggeration" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
                             ns1:format "float" ] ] ;
-            ns3:METHOD [ dcterms:description "Shading Method" ;
+            ns2:METHOD [ dcterms:description "Shading Method" ;
                     dcterms:title "Shading Method" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"Standard\""^^rdf:JSON ;
@@ -588,13 +588,13 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "With Shadows" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:NDIRS [ dcterms:description "Number of sample directions for ambient occlusion. Divides azimuth range (270 to 0 to 90 degree) into sectors. Declination (0 to 90 degree) is divided in (Number of Directions / 4) sectors." ;
+            ns2:NDIRS [ dcterms:description "Number of sample directions for ambient occlusion. Divides azimuth range (270 to 0 to 90 degree) into sectors. Declination (0 to 90 degree) is divided in (Number of Directions / 4) sectors." ;
                     dcterms:title "Number of Directions" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "8"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "integer" ] ] ;
-            ns3:POSITION [ dcterms:description "Sun's Position" ;
+            ns2:POSITION [ dcterms:description "Sun's Position" ;
                     dcterms:title "Sun's Position" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"azimuth and height\""^^rdf:JSON ;
@@ -602,14 +602,14 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "date and time" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:RADIUS [ dcterms:description "Radius used to trace for shadows (ambient occlusion) [map units]." ;
+            ns2:RADIUS [ dcterms:description "Radius used to trace for shadows (ambient occlusion) [map units]." ;
                     dcterms:title "Search Radius" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "10"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
                             ns1:format "float" ] ] ;
-            ns3:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
+            ns2:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
                     dcterms:title "Shadow" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"slim\""^^rdf:JSON ;
@@ -617,7 +617,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                                 "slim" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:TIME [ dcterms:description "Hour" ;
+            ns2:TIME [ dcterms:description "Hour" ;
                     dcterms:title "Hour" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "12"^^rdf:JSON ;
@@ -626,7 +626,7 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
                             ns1:format "float" ;
                             ns1:maximum 24 ;
                             ns1:minimum 0 ] ] ;
-            ns3:UNIT [ dcterms:description "Unit" ;
+            ns2:UNIT [ dcterms:description "Unit" ;
                     dcterms:title "Unit" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"radians\""^^rdf:JSON ;
@@ -640,20 +640,20 @@ Live OGC API - Processes processDescription, normalised (ZOO-Project-internal fi
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns2:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
+    proc:outputs [ ns4:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
                     dcterms:title "Analytical Hillshading" ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
+                                    ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "image/png" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-aaigrid" ] ] ] ] .
+                                    ns1:contentMediaType "image/tiff" ] ] ] ] .
 
 
 ```
@@ -982,7 +982,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
   "id": "SAGA.ta_lighting.0",
   "title": "Analytical Hillshading",
   "description": "This tool performs an analytical hillshade computation for an elevation grid. The 'Standard' method simply calculates the angle at which light coming from the position of the light source would hit the surface. This method can produce angles greater than 90 degree. With the second method all values are kept within the range of 0-90 degree. It can be enhanced with shadowing effects, where shadowed cells will be marked with a value of exactly 90 degree. 'Shadows Only' creates a mask for the shadowed areas and sets all other cells to no-data. 'Combined Shading' takes the values of the standard method and multiplies these with the normalized slope. 'Ambient Occlusion' is based on the concepts of Tarini et al. (2006), but only the northern half-space is considered here. ",
@@ -1301,9 +1301,9 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ns1: <https://w3id.org/ogc/api/schema/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
-@prefix ns4: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns2: <https://geolabs.github.io/bblocks-process-profiles/def/input/> .
+@prefix ns3: <https://geolabs.github.io/bblocks-process-profiles/def/output/> .
+@prefix ns4: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix pp: <https://geolabs.github.io/bblocks-process-profiles/def/> .
 @prefix proc: <https://w3id.org/ogc/api/processes/> .
@@ -1322,18 +1322,18 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     dcterms:title "Analytical Hillshading" ;
     rdfs:seeAlso [ rdfs:label "Execute End Point" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
+            ns4:relation <http://www.opengis.net/def/rel/ogc/1.0/execute> ;
             oa:hasTarget <https://host1.tb.geonovum.geolabs.fr/ogc-api/processes/SAGA.ta_lighting.0/execution> ] ;
     pp:version "1.0.0" ;
-    proc:inputs [ ns3:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
+    proc:inputs [ ns2:AZIMUTH [ dcterms:description "Direction of the light source, measured in degree clockwise from the North direction." ;
                     dcterms:title "Azimuth" ;
                     proc:keywords "azimuth" ;
-                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
-                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
+                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `azimuth`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/azimuth> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
+                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `azimuth`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/azimuth> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "315"^^rdf:JSON ;
                             proc:nullable true ;
@@ -1341,21 +1341,21 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             ns1:format "float" ;
                             ns1:maximum 360 ;
                             ns1:minimum 0 ] ] ;
-            ns3:DATE_MIN [ dcterms:description "Day" ;
+            ns2:DATE_MIN [ dcterms:description "Day" ;
                     dcterms:title "Day (min value)" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:nullable true ;
                             proc:type "string" ;
                             ns1:format "date" ] ] ;
-            ns3:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
+            ns2:DECLINATION [ dcterms:description "Height of the light source, measured in degree above the horizon." ;
                     dcterms:title "Height" ;
                     proc:keywords "altitude" ;
-                    proc:metadata [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
-                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ],
-                        [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
+                    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading -- input `altitude`" ;
                             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading/inputs/altitude> ;
-                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ] ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/generic-input> ],
+                        [ dcterms:title "Implementation Profile: Analytical hillshading -- input `altitude`" ;
+                            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading/inputs/altitude> ;
+                            proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-input> ] ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "45"^^rdf:JSON ;
                             proc:nullable true ;
@@ -1363,7 +1363,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             ns1:format "float" ;
                             ns1:maximum 90 ;
                             ns1:minimum 0 ] ] ;
-            ns3:ELEVATION [ dcterms:description "Elevation" ;
+            ns2:ELEVATION [ dcterms:description "Elevation" ;
                     dcterms:title "Elevation" ;
                     proc:keywords "GeoTIFF",
                         "elevation" ;
@@ -1385,14 +1385,14 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-envi" ] ] ] ;
-            ns3:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
+            ns2:EXAGGERATION [ dcterms:description "The terrain exaggeration factor allows one to increase the shading contrasts in flat areas." ;
                     dcterms:title "Exaggeration" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "1"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
                             ns1:format "float" ] ] ;
-            ns3:METHOD [ dcterms:description "Shading Method" ;
+            ns2:METHOD [ dcterms:description "Shading Method" ;
                     dcterms:title "Shading Method" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"Standard\""^^rdf:JSON ;
@@ -1404,13 +1404,13 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "With Shadows" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:NDIRS [ dcterms:description "Number of sample directions for ambient occlusion. Divides azimuth range (270 to 0 to 90 degree) into sectors. Declination (0 to 90 degree) is divided in (Number of Directions / 4) sectors." ;
+            ns2:NDIRS [ dcterms:description "Number of sample directions for ambient occlusion. Divides azimuth range (270 to 0 to 90 degree) into sectors. Declination (0 to 90 degree) is divided in (Number of Directions / 4) sectors." ;
                     dcterms:title "Number of Directions" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "8"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "integer" ] ] ;
-            ns3:POSITION [ dcterms:description "Sun's Position" ;
+            ns2:POSITION [ dcterms:description "Sun's Position" ;
                     dcterms:title "Sun's Position" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"azimuth and height\""^^rdf:JSON ;
@@ -1418,14 +1418,14 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "date and time" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:RADIUS [ dcterms:description "Radius used to trace for shadows (ambient occlusion) [map units]." ;
+            ns2:RADIUS [ dcterms:description "Radius used to trace for shadows (ambient occlusion) [map units]." ;
                     dcterms:title "Search Radius" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "10"^^rdf:JSON ;
                             proc:nullable true ;
                             proc:type "number" ;
                             ns1:format "float" ] ] ;
-            ns3:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
+            ns2:SHADOW [ dcterms:description "Choose 'slim' to trace grid node's shadow, 'fat' to trace the whole cell's shadow. The first is slightly faster but might show some artifacts." ;
                     dcterms:title "Shadow" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"slim\""^^rdf:JSON ;
@@ -1433,7 +1433,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                                 "slim" ;
                             proc:nullable true ;
                             proc:type "string" ] ] ;
-            ns3:TIME [ dcterms:description "Hour" ;
+            ns2:TIME [ dcterms:description "Hour" ;
                     dcterms:title "Hour" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "12"^^rdf:JSON ;
@@ -1442,7 +1442,7 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             ns1:format "float" ;
                             ns1:maximum 24 ;
                             ns1:minimum 0 ] ] ;
-            ns3:UNIT [ dcterms:description "Unit" ;
+            ns2:UNIT [ dcterms:description "Unit" ;
                     dcterms:title "Unit" ;
                     proc:minOccurs 0 ;
                     proc:schema [ proc:default "\"radians\""^^rdf:JSON ;
@@ -1453,19 +1453,19 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
     proc:jobControlOptions "async-execute",
         "dismiss",
         "sync-execute" ;
-    proc:metadata [ dcterms:title "Generic Profile: Analytical hillshading" ;
-            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading> ;
-            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
-        [ dcterms:title "Process Concept: Terrain Analysis" ;
+    proc:metadata [ dcterms:title "Process Concept: Terrain Analysis" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/concept/terrain-analysis> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/concept> ],
+        [ dcterms:title "Generic Profile: Analytical hillshading" ;
+            proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/generic-profile/analytical-hillshading> ;
+            proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/generic> ],
         [ dcterms:title "Implementation Profile: Analytical hillshading" ;
             proc:href <https://geolabs.github.io/bblocks-generic-profiles/def/implementation-profile/analytical-hillshading> ;
             proc:role <http://www.opengis.net/spec/wps/2.0/def/process-profile/implementation> ] ;
     proc:mutable false ;
     proc:outputTransmission "reference",
         "value" ;
-    proc:outputs [ ns4:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
+    proc:outputs [ ns3:SHADE [ dcterms:description "The angle between the surface and the incoming light beams, measured in radians." ;
                     dcterms:title "Analytical Hillshading" ;
                     proc:keywords "GeoTIFF",
                         "raster" ;
@@ -1477,16 +1477,16 @@ The same processDescription as OGC 14-065r1 Table 21 wants it at the Implementat
                             proc:role <https://geolabs.github.io/bblocks-generic-profiles/def/role/implementation-output> ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/png" ],
-                                [ proc:type "string" ;
-                                    ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "image/tiff" ],
+                                    ns1:contentMediaType "application/x-ogc-envi" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/x-ogc-aaigrid" ],
                                 [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
-                                    ns1:contentMediaType "application/x-ogc-envi" ] ] ] ] .
+                                    ns1:contentMediaType "image/png" ],
+                                [ proc:type "string" ;
+                                    ns1:contentEncoding "base64" ;
+                                    ns1:contentMediaType "image/tiff" ] ] ] ] .
 
 
 ```
@@ -1525,7 +1525,7 @@ Candidate entry `https://geolabs.github.io/bblocks-process-profiles/def/process-
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/terrain/hillshading",
   "type": "ProcessType",
   "prefLabel": "Analytical Hillshading",
@@ -1621,7 +1621,7 @@ allOf:
       x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/output/
 $defs:
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/process-type/schema.yaml
   inheritedProcessDescription:
     allOf:
     - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml
@@ -2067,7 +2067,7 @@ x-jsonld-prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.terrain.hillshading
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'
 
@@ -2075,8 +2075,8 @@ x-bblocks-metadata:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/schema.yaml)
+* YAML version: [schema.yaml](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/schema.json)
+* JSON version: [schema.json](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/schema.yaml)
 
 
 # JSON-LD Context
@@ -2366,7 +2366,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/context.jsonld)
+[context.jsonld](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/context.jsonld)
 
 
 # For developers

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/within/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/within/context.jsonld",
   "id": "Within",
   "title": "Within test",
   "description": "This service shall return a true value if and only if the geometry InputEntity1 is spatially within geometry InputEntity2; that is if every point on InputEntity1 is also on InputEntity2.",

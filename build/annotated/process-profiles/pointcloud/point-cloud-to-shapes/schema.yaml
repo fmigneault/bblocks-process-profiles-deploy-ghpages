@@ -29,7 +29,7 @@ allOf:
       x-jsonld-vocab: https://geolabs.github.io/bblocks-process-profiles/def/output/
 $defs:
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/process-type/schema.yaml
   inheritedProcessDescription:
     allOf:
     - $ref: https://ogcincubator.github.io/bblocks-ogcapi-processes/build/annotated/api/processes/v1/schemas/process/schema.yaml
@@ -382,6 +382,6 @@ x-jsonld-prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.pointcloud.point-cloud-to-shapes
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'

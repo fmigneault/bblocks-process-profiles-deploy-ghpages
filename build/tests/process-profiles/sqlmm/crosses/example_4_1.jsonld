@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/crosses/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/crosses/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/sqlmm/crosses",
   "type": "ProcessType",
   "prefLabel": "Crosses test",

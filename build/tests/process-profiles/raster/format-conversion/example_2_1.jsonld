@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/raster/format-conversion/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/raster/format-conversion/context.jsonld",
   "id": "Gdal_Translate",
   "title": "Convert raster data from one format to another. ",
   "description": "http://www.gdal.org/gdal_translate.html",

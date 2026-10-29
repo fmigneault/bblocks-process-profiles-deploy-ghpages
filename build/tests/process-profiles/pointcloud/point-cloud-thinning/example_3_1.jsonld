@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/pointcloud/point-cloud-thinning/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/pointcloud/point-cloud-thinning/context.jsonld",
   "id": "SAGA.pointcloud_tools.9",
   "title": "Point Cloud Thinning (Simple)",
   "description": "This simple thinning tool reduces the number of points in a point cloud by sequential point removal. It is therefore most suited for points stored in chronological order. ",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
   "inputs": {
     "mangrove_mask_file": {
       "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/mangrove_mask.tif",

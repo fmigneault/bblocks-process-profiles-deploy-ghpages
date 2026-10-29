@@ -1,5 +1,5 @@
 Validation report for ospd.process-profiles.raster.radiometric-index - Process profile: OTB.RadiometricIndices
-Generated 2026-10-29T01:36:59.022162+00:00
+Generated 2026-10-29T15:06:49.265916+00:00
 === Files ===
 Using examples/processDescription.json from examples
 JSON-LD context is present - uplifting

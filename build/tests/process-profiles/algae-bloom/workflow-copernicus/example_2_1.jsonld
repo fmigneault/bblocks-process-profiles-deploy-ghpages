@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/algae-bloom/workflow-copernicus/context.jsonld",
   "id": "algae-usecase-workflow-copernicus",
   "version": "2.0.0",
   "title": "Algae bloom for water quality assessment on Sentinel-2 imagery offered by Copernicus platform.\n",

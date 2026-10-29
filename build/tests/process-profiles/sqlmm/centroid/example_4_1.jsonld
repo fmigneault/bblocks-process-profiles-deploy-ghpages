@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/centroid/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/centroid/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/sqlmm/centroid",
   "type": "ProcessType",
   "prefLabel": "Computes the centroid of a polygon.",

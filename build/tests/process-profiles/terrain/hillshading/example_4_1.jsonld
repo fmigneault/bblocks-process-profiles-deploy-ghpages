@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/terrain/hillshading/context.jsonld",
   "id": "https://geolabs.github.io/bblocks-process-profiles/def/process-type/terrain/hillshading",
   "type": "ProcessType",
   "prefLabel": "Analytical Hillshading",

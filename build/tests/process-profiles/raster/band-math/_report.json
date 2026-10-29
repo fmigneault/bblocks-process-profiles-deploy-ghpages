@@ -2,7 +2,7 @@
   "title": "Validation report for ospd.process-profiles.raster.band-math - Process profile: OTB.BandMath",
   "bblockName": "Process profile: OTB.BandMath",
   "bblockId": "ospd.process-profiles.raster.band-math",
-  "generated": "2026-10-29T01:36:55.744835+00:00",
+  "generated": "2026-10-29T15:06:44.978811+00:00",
   "result": true,
   "items": [
     {
@@ -10,7 +10,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/raster/band-math/example_2_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/raster/band-math/example_2_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/raster/band-math/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -65,7 +65,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/raster/band-math/example_3_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/raster/band-math/example_3_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/raster/band-math/example_3_1.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
         "language": "application/json"
@@ -125,7 +125,7 @@
         "type": "EXAMPLE",
         "requireFail": false,
         "filename": "build/tests/process-profiles/raster/band-math/example_4_1.json",
-        "url": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/tests/process-profiles/raster/band-math/example_4_1.json",
+        "url": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/tests/process-profiles/raster/band-math/example_4_1.json",
         "exampleIndex": 4,
         "snippetIndex": 1,
         "language": "application/json"

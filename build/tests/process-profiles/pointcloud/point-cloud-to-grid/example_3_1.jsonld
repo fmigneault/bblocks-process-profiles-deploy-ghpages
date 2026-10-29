@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/pointcloud/point-cloud-to-grid/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/pointcloud/point-cloud-to-grid/context.jsonld",
   "id": "SAGA.pointcloud_tools.4",
   "title": "Point Cloud to Grid",
   "description": "Point Cloud to Grid",

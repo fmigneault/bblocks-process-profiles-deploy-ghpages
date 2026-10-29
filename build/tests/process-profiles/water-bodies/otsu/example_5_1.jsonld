@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/water-bodies/otsu/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/water-bodies/otsu/context.jsonld",
   "binary_mask_item": {
     "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-otsu-0001/results/otsu.tif",
     "type": "image/tiff; application=geotiff"

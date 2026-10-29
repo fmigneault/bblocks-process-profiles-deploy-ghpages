@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/sqlmm/centroid/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/sqlmm/centroid/context.jsonld",
   "id": "Centroid",
   "title": "Computes the centroid of a polygon. ",
   "description": "This service shall return the point that is the geometric centre of gravity of the geometry InputPolygon.",

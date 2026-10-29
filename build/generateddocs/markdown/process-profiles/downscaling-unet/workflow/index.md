@@ -573,7 +573,7 @@ Description of the deployed *OGC API - Proceses* process that encapsulates the U
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
   "id": "ogc-ospd2026-downscaling-unet-workflow",
   "version": "0.1.3.dev10",
   "title": "RDPS-to-HRDPS climate downscaling with a U-Net",
@@ -905,18 +905,18 @@ such as precipitation.
                     proc:minOccurs 1 ;
                     proc:schema [ proc:type "string" ] ] ] ;
     :jobControlOptions "async-execute" ;
-    :metadata [ :role "https://schema.org/contributor" ;
-            :value [ ns2:schema "https://schema.org/Person" ;
-                    :affiliation "Technologies Luqia" ;
-                    :email "francis.charette-migneault@luqia.ca" ;
-                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
-                    :name "Francis Charette-Migneault" ] ],
-        [ :role "https://schema.org/author" ;
+    :metadata [ :role "https://schema.org/author" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Ouranos" ;
                     :email "smith.trevorj@ouranos.ca" ;
                     :identifier "https://orcid.org/0000-0001-5393-8359" ;
                     :name "Trevor James Smith" ] ],
+        [ :role "https://schema.org/contributor" ;
+            :value [ ns2:schema "https://schema.org/Person" ;
+                    :affiliation "Technologies Luqia" ;
+                    :email "francis.charette-migneault@luqia.ca" ;
+                    :identifier "https://orcid.org/0000-0003-4862-3349" ;
+                    :name "Francis Charette-Migneault" ] ],
         [ :role "https://schema.org/contributor" ;
             :value [ ns2:schema "https://schema.org/Person" ;
                     :affiliation "Technologies Luqia" ;
@@ -938,16 +938,16 @@ such as precipitation.
     :outputTransmission "reference",
         "value" ;
     :outputs [ proc:forecast_files [ dcterms:title "forecast_files" ;
-                    proc:formats [ proc:default "true"^^rdf:JSON ;
-                            proc:mediaType "text/plain" ],
+                    proc:formats [ proc:mediaType "application/pdf" ],
                         [ proc:mediaType "text/html" ],
-                        [ proc:mediaType "application/pdf" ] ;
+                        [ proc:default "true"^^rdf:JSON ;
+                            proc:mediaType "text/plain" ] ;
                     proc:schema [ ns1:oneOf [ proc:type "string" ;
+                                    ns1:contentMediaType "text/plain" ],
+                                [ proc:type "string" ;
                                     ns1:contentEncoding "base64" ;
                                     ns1:contentMediaType "application/pdf" ;
                                     ns1:format "binary" ],
-                                [ proc:type "string" ;
-                                    ns1:contentMediaType "text/plain" ],
                                 [ proc:type "string" ;
                                     ns1:contentMediaType "text/html" ] ] ] ;
             proc:inference_output [ dcterms:title "inference_output" ;
@@ -1010,7 +1010,7 @@ to obtain the `ogc-ospd2026-downscaling-unet-workflow` process.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
   "processDescription": {
     "process": {
       "id": "ogc-ospd2026-downscaling-unet-workflow",
@@ -1109,7 +1109,7 @@ in alignment with the generated provenance metadata obtained from the job execut
 #### jsonld
 ```jsonld
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
   "id": "https://crim-ca.github.io/bblocks-process-profiles/def/process-type/downscaling-unet",
   "type": "ProcessType",
   "prefLabel": "RDPS-to-HRDPS climate downscaling with a U-Net",
@@ -22148,7 +22148,7 @@ $defs:
   applicationPackage:
     $ref: https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/ogcapppkg/schema.yaml
   processTypeEntry:
-    $ref: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/process-type/schema.yaml
+    $ref: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/process-type/schema.yaml
   w3cProvJson:
     $ref: https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-json/schema.yaml
   cwlProvExpandedJsonLd:
@@ -22201,7 +22201,7 @@ x-jsonld-prefixes:
   geoproc: https://w3id.org/ogc/rim/geoprocessing/
 x-bblocks-metadata:
   itemIdentifier: ospd.process-profiles.downscaling-unet.workflow
-  register: https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json
+  register: https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json
   version: '0.1'
   dateOfLastChange: '2026-10-29'
 
@@ -22209,8 +22209,8 @@ x-bblocks-metadata:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/schema.json)
-* JSON version: [schema.json](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/schema.yaml)
+* YAML version: [schema.yaml](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/schema.json)
+* JSON version: [schema.json](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/schema.yaml)
 
 
 # JSON-LD Context
@@ -22300,7 +22300,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld)
+[context.jsonld](https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld)
 
 ## Sources
 

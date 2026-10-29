@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/downscaling-unet/workflow/context.jsonld",
   "inputs": {
     "start_datetime": "2024-05-02T07:00:00",
     "end_datetime": "2024-05-02T08:00:00",

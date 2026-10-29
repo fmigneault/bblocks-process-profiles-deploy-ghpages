@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/kindgrove-steps/download-band/context.jsonld",
   "inputs": {
     "stac_item": {
       "href": "https://ospd.example.org/ogc-api/jobs/upstream-step/results/scene_item.json",

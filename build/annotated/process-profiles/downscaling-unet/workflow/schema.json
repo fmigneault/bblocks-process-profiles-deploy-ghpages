@@ -141,7 +141,7 @@
       "$ref": "https://geolabs.github.io/bblock-ogcapi-processes-part2/build/annotated/api/processes/v2/schemas/ogcapppkg/schema.json"
     },
     "processTypeEntry": {
-      "$ref": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/process-type/schema.json"
+      "$ref": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/process-type/schema.json"
     },
     "w3cProvJson": {
       "$ref": "https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/annotated/ogc-utils/prov/w3c-prov-json/schema.json"
@@ -210,7 +210,7 @@
   },
   "x-bblocks-metadata": {
     "itemIdentifier": "ospd.process-profiles.downscaling-unet.workflow",
-    "register": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/register.json",
+    "register": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/register.json",
     "version": "0.1",
     "dateOfLastChange": "2026-10-29"
   }

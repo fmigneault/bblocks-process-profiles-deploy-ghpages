@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/algae-bloom/workflow-earth-search-process/context.jsonld",
   "id": "algae-usecase-workflow-earth-search-process",
   "version": "2.1.0",
   "title": "Processing on Sentinel-2 L2A bands to evaluate algae bloom.\n",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/water-bodies/norm-diff/context.jsonld",
   "id": "norm_diff",
   "version": "1.4.1",
   "title": "norm_diff",

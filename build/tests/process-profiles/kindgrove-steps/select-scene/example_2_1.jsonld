@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/kindgrove-steps/select-scene/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/kindgrove-steps/select-scene/context.jsonld",
   "id": "select_scene",
   "version": "0.1.0",
   "title": "select_scene",

@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/fmigneault/bblocks-process-profiles-deploy-ghpages/undefined/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
+  "@context": "https://fmigneault.github.io/bblocks-process-profiles-deploy-ghpages/build/annotated/process-profiles/water-bodies/water-bodies/context.jsonld",
   "id": "water-bodies",
   "version": "1.4.1",
   "title": "Water bodies detection based on NDWI and otsu threshold",
