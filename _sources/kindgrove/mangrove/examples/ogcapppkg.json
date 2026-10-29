@@ -1,0 +1,13 @@
+{
+  "processDescription": {
+    "process": {
+      "id": "mangrove_cli",
+      "version": "0.0.1"
+    }
+  },
+  "executionUnit": {
+    "href": "https://github.com/GeoLabs/bblocks-eoap-cct/raw/291a741c3f2b61da7607f1dbb7a777134374227d/_sources/cwl-to-ogcprocess/examples/mangrove-workflow.cwl#mangrove_cli",
+    "type": "application/cwl+yaml",
+    "rel": "http://www.opengis.net/def/rel/ogc/1.0/executionUnit"
+  }
+}

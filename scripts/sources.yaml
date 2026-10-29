@@ -1,0 +1,228 @@
+# Pinned sources used by generate.py. CWL is read from local clones (the generator never
+# downloads) and referenced in the register by URL only. A source pins either `commit` (a git
+# checkout, the default -- see ensure_clones() in run_workflows.py) or `release` + `sha256` (a
+# GitHub Release asset downloaded once and verified by checksum -- ensure_release_asset(); used
+# when the CWL is published only as a release artifact and never committed to the repo tree, so
+# there is no commit to pin against. A release asset is not immutable the way a commit is: the
+# checksum is what actually pins it, and a mismatch on a later fetch is a loud failure, not a
+# silent re-download).
+w1:
+  title: W1 Algae Bloom (Se2WaQ water quality, CRIM)
+  repo: https://github.com/crim-ca/ogc-ospd-phase1
+  commit: 5edd4ec4cbd21e5fceb7c3f4b6c5d0ce809a57ea
+  clone: ogc-ospd-phase1        # directory name under --sources-root
+  base_path: ogc_app_pkg
+  license: https://spdx.org/licenses/CC-BY-NC-SA-4.0
+  upstream: https://gitlab.ogc.org/ogc/ogc-ospd   # s:codeRepository in the CWL, not reachable publicly
+w2:
+  title: W2 KindGrove mangrove biomass (Starling Foundries / GeoLabs)
+  repo: https://github.com/GeoLabs/bblocks-eoap-cct
+  commit: 291a741c3f2b61da7607f1dbb7a777134374227d
+  clone: bblocks-eoap-cct
+  base_path: _sources/cwl-to-ogcprocess/examples
+  license: https://spdx.org/licenses/Apache-2.0
+eoap_cct:
+  repo: https://github.com/GeoLabs/bblocks-eoap-cct
+  commit: 291a741c3f2b61da7607f1dbb7a777134374227d
+  clone: bblocks-eoap-cct
+  transform: _sources/cwl-to-ogcprocess/transforms/cwl-to-ogcprocess.jq
+sqlmm_geonovum:
+  title: SQL/MM spatial operations (ZOO-Project, Geonovum testbed)
+  repo: https://host1.tb.geonovum.geolabs.fr/ogc-api/processes
+  clone: sqlmm-geonovum
+  base_path: .
+  kind: ogcapi-process   # a live OGC API - Processes processDescription, fetched and cached as-is
+                         # -- no CWL, no jq transform (the source is already in the target shape)
+  license: null   # no license declared by this testbed instance; do not assume one
+  family: SQL/MM
+  group: SQL/MM (Geonovum testbed)
+  items:   # process ids to fetch, cached as <id>.json under --sources-root/sqlmm-geonovum/
+    - Intersects
+    - Disjoint
+    - Contains
+    - Within
+    - Touches
+    - Crosses
+    - Equals
+    - Intersection
+    - Union
+    - Difference
+    - SymDifference
+    - Buffer
+    - Centroid
+    - GetArea
+    - IsSimple
+    - ConvexHull
+raster_geonovum:
+  title: Raster/coverage operations (ZOO-Project, Geonovum testbed, GDAL/OTB)
+  repo: https://host1.tb.geonovum.geolabs.fr/ogc-api/processes
+  clone: raster-geonovum
+  base_path: .
+  kind: ogcapi-process
+  license: null   # no license declared by this testbed instance; do not assume one
+  family: GDAL/OTB
+  group: Raster/Coverage (Geonovum testbed)
+  items:   # process ids to fetch, cached as <id>.json under --sources-root/raster-geonovum/
+    - Gdal_Warp
+    - OTB.BandMath
+    - OTB.BandMathX
+    - OTB.RadiometricIndices
+    - OTB.ExtractROI
+    - Gdal_Translate
+    - OTB.ImageEnvelope
+vector_geonovum:
+  title: Vector operations (ZOO-Project, Geonovum testbed, SAGA GIS)
+  repo: https://host1.tb.geonovum.geolabs.fr/ogc-api/processes
+  clone: vector-geonovum
+  base_path: .
+  kind: ogcapi-process
+  license: null   # no license declared by this testbed instance; do not assume one
+  family: SAGA
+  group: Vector (Geonovum testbed)
+  items:   # process ids to fetch, cached as <id>.json under --sources-root/vector-geonovum/
+    - SAGA.shapes_tools.19
+terrain_geonovum:
+  title: Terrain analysis (ZOO-Project, Geonovum testbed, SAGA GIS 7.3.0)
+  repo: https://host1.tb.geonovum.geolabs.fr/ogc-api/processes
+  clone: terrain-geonovum
+  base_path: .
+  kind: ogcapi-process
+  license: null   # no license declared by this testbed instance; do not assume one
+  family: SAGA
+  group: Terrain analysis (Geonovum testbed)
+  items:   # process ids to fetch, cached as <id>.json under --sources-root/terrain-geonovum/
+    - SAGA.ta_morphometry.0
+    - SAGA.ta_morphometry.16
+    - SAGA.ta_morphometry.18
+    - SAGA.ta_lighting.0
+pointcloud_geonovum:
+  title: Point cloud processing (ZOO-Project, Geonovum testbed, SAGA GIS 7.3.0)
+  repo: https://host1.tb.geonovum.geolabs.fr/ogc-api/processes
+  clone: pointcloud-geonovum
+  base_path: .
+  kind: ogcapi-process
+  license: null   # no license declared by this testbed instance; do not assume one
+  family: SAGA
+  group: Point clouds (Geonovum testbed)
+  items:   # process ids to fetch, cached as <id>.json under --sources-root/pointcloud-geonovum/
+    - SAGA.pointcloud_tools.4
+    - SAGA.pointcloud_tools.9
+    - SAGA.pointcloud_tools.5
+w3:
+  title: W3 Water Bodies (OGC EO Application Package Hands-On, GeoLabs split)
+  repo: https://github.com/GeoLabs/ogc-eo-application-package-hands-on
+  commit: f47258567ddf8efbc7c33fd1ec277e4f1b454883
+  clone: ogc-eo-application-package-hands-on
+  base_path: water-bodies/app-pkg-multiple
+  # Neither this fork nor Terradue/ogc-eo-application-package-hands-on (upstream) declares a real
+  # license -- the repo's own LICENCE file is a 4-byte "TBW" placeholder in both. Reusing the
+  # license of the register's previous W3 source (gfenoy/mastering-app-package, CC-BY-SA-4.0,
+  # confirmed via the GitHub API) is an assumption, not a fact verified on this repo -- Gérald's
+  # call, made 2026-09-23; revisit if either repo ever adds a real LICENSE file.
+  license: https://spdx.org/licenses/CC-BY-SA-4.0
+  upstream: https://github.com/Terradue/ogc-eo-application-package-hands-on   # the tools' own origin (docker images), same TBW license gap
+kindgrove_steps:
+  title: W2b KindGrove mangrove biomass (step notebooks, GeoLabs, prerelease)
+  repo: https://github.com/GeoLabs/KindGrove
+  release: v0.0.2-rc2   # GitHub prerelease; CI-built, never committed to the repo tree (unlike every other source above)
+  sha256: 361cb6a75d541fdd480a41d75aab83896afebea3c096f1893d1ac2537bb80f3d   # of mangrove-workflow-steps.cwl, checked 2026-09-24
+  clone: kindgrove-steps
+  base_path: .
+  assets: [mangrove-workflow-steps.cwl]   # one packed $graph document: the Workflow + 8 steps; no element collides (only one top-level Workflow), unlike W3's M-13
+  license: https://spdx.org/licenses/CC-BY-NC-SA-4.0   # declared in the CWL itself (s:license), unlike W3's TBW gap
+  # A ground-up reimplementation, not a repackaging of the pinned `w2` source: different tools,
+  # different Docker images (ghcr.io/geolabs/kindgrove/*), different license (Apache-2.0 for `w2`
+  # vs this). Added alongside `w2` under its own `kindgrove-steps` profile workflow, not replacing
+  # it -- see the `kindgrove-steps` block in profiles.yaml and docs/WORKFLOW-COMPARISON.md.
+
+# Real `cwltool --provenance` runs (CWLProv research objects) that the run-derived examples are
+# built from. Like the CWL clones they are read from local directories, never downloaded: `bag` is
+# a path under --runs-root (default: --sources-root), or absolute. They are large (the W1 payload
+# is 3.1 GB) and are not part of this repository.
+#
+# generate.py reads `bag` and `note`. scripts/run_workflows.py produces the bags from the rest:
+# `workflow` (clone key, CWL file, optional packed-document element, optional `patch`: find/replace
+# substitutions applied to a temporary copy of the CWL file, never to the clone -- for a source
+# whose CWL cannot be fixed at the source, see the mechanism's own docstring in run_workflows.py;
+# not currently used by any `runs:` entry below, since W3's own NetworkAccess fix landed at the
+# source instead, docs/DEVIATIONS.md U-06), either `job` (a job file in the clone, relative to its
+# base_path; `secrets` maps its placeholder inputs to environment variables) or inline `inputs`,
+# `results` (cwltool --outdir), `cwltool_args`.
+runs:
+  w1-earth-search:
+    bag: ogc-ospd-phase1/ogc_app_pkg/PROV
+    results: ogc-ospd-phase1/ogc_app_pkg/results
+    workflow: {repo: w1, file: algae-usecase-workflow-earth-search.cwl}
+    job: example/algae-usecase-job-earth-search.yml
+    note: >-
+      earth-search variant of the pinned W1 package, `cwltool --outdir ./results --provenance ./PROV
+      algae-usecase-workflow-earth-search.cwl example/algae-usecase-job-earth-search.yml`, 2026-09-23,
+      cwltool 3.1.20260108082145 on an arm64 macOS host; two products scattered
+      (S2A_29SPC_20190701_1_L2A then S2A_29SPC_20190701_0_L2A). Three local deviations were needed to
+      run the package at all, none touching the CWL (docs/DEVIATIONS.md U-03, U-04)
+  w1-copernicus:
+    bag: ogc-ospd-phase1/ogc_app_pkg/PROV1
+    results: ogc-ospd-phase1/ogc_app_pkg/results1
+    workflow: {repo: w1, file: algae-usecase-workflow-copernicus.cwl}
+    job: example/algae-usecase-job-copernicus.yml
+    secrets: {s3_access_key: CDSE_S3_ACCESS_KEY, s3_secret_key: CDSE_S3_SECRET_KEY}
+    note: >-
+      Copernicus variant of the pinned W1 package, `cwltool --outdir ./results1 --provenance ./PROV1
+      algae-usecase-workflow-copernicus.cwl example/algae-usecase-job-copernicus.yml` with Copernicus
+      Data Space S3 credentials, 2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host; one
+      product (S2A_MSIL2A_20190701T110621_N0500_R137_T29SPC_20230604T023542). cwltool writes the
+      `cwltool:Secrets` inputs as `(secret-<uuid>)` placeholders in the research object
+  w2-pinned:
+    bag: runs/w2-pinned/ro
+    results: runs/w2-pinned/out
+    workflow: {repo: w2, file: mangrove-workflow.cwl, element: mangrove-workflow}
+    inputs:
+      aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+      cloud_cover_max: 20
+      days_back: 90
+    cwltool_args: [--no-match-user]   # the image's entrypoint loses its execute bit under cwltool's uid mapping
+    note: >-
+      the register's pinned W2 source itself (bblocks-eoap-cct c27c60d `mangrove-workflow.cwl#mangrove-workflow`)
+      run with the profile's execute inputs, `cwltool --no-match-user --provenance ro --outdir out`,
+      2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host, 126 s; scene selected by
+      `days_back` on that day: S2C_46PGC_20260913_0_L2A
+  water-bodies:
+    bag: runs/water-bodies/ro
+    results: runs/water-bodies/out
+    workflow:
+      repo: w3
+      file: water-bodies.cwl
+      # docs/DEVIATIONS.md U-06: fixed at the source, no `patch` needed any more -- the fork's own
+      # water-bodies.cwl already declares `class: cwltool:NetworkAccess` with the `cwltool:`
+      # namespace. One CWL file per step (no packed $graph, no `element:` needed for any of the 6
+      # water-bodies profiles), the same layout as W1.
+    inputs:
+      aoi: "-121.399,39.834,-120.74,40.472"
+      epsg: "EPSG:4326"
+      stac_items:
+        - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A"
+        - "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+    cwltool_args: [--enable-ext]   # still required even with the correct cwltool: prefix, U-06
+    note: >-
+      the pinned W3 source itself (ogc-eo-application-package-hands-on f472585
+      `water-bodies/app-pkg-multiple/water-bodies.cwl`, one CWL file per step), inputs from that
+      source's own `water-bodies/params.yml`, run with `cwltool --enable-ext --provenance ro
+      --outdir out`, 2026-09-23, cwltool 3.1.20260108082145 on an arm64 macOS host, ~9 min; two
+      STAC items scattered (S2B_10TFK_20210713_0_L2A then S2A_10TFK_20220524_0_L2A), each over 2
+      bands (green, nir)
+  kindgrove-steps:
+    bag: runs/kindgrove-steps/ro
+    results: runs/kindgrove-steps/out
+    workflow: {repo: kindgrove_steps, file: mangrove-workflow-steps.cwl, element: mangrove-workflow-steps}
+    inputs:
+      aoi: {bbox: [95.15, 15.9, 95.35, 16.1], crs: CRS84}
+      cloud_cover_max: 20
+      days_back: 90
+    cwltool_args: [--enable-ext]
+    note: >-
+      the pinned W2b source itself (GeoLabs/KindGrove v0.0.2-rc2
+      `mangrove-workflow-steps.cwl#mangrove-workflow-steps`), the same execute inputs as
+      `w2-pinned` for comparability, `cwltool --enable-ext --provenance ro --outdir out`,
+      2026-09-24, cwltool 3.1.20260108082145 on an arm64 macOS host, ~5 min; scene selected by
+      `days_back` on that day, three bands scattered (red, green, nir) through download_band and
+      reproject_band
