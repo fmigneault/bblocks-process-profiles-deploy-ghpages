@@ -1,7 +1,0 @@
-{
-  "@context": "https://crim-ca.github.io/bblocks-process-profiles/build/annotated/process-profiles/kindgrove-steps/export-stac/context.jsonld",
-  "stac_catalog": {
-    "href": "https://ospd.example.org/ogc-api/jobs/kindgrove-steps-export-stac-0001/results/catalog.json",
-    "type": "application/json"
-  }
-}

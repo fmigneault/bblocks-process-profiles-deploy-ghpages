@@ -1,6 +1,0 @@
-{
-  "stac": {
-    "href": "https://ospd.example.org/ogc-api/jobs/water-bodies-water-bodies-0001/results/catalog.json",
-    "type": "application/json"
-  }
-}
